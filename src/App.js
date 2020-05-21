@@ -1,26 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Row, Col } from 'react-bootstrap';
+import Nav from './components/layout/Navbar';
+import Converter from './components/converter/Converter';
+import './scss/App.scss';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className='app'>
+			<Nav />
+			<div className='container-fluid px-2'>
+				<Row className='my-3'>
+					<Col md={4}>
+						<Converter />
+					</Col>
+				</Row>
+			</div>
+		</div>
+	);
 }
 
 export default App;
