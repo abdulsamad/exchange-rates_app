@@ -74,7 +74,7 @@ function Converter() {
 
 	return (
 		<Form className='text-center'>
-			<h4 className='mb-3'>Convert</h4>
+			<h4 className='mb-3'>Convert Currency</h4>
 			<CurrencyRow
 				amount={fromAmount}
 				currency={fromCurrency}

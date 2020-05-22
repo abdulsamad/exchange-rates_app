@@ -51,7 +51,7 @@ function CurrencyRow({ onChangeAmount, onChangeCurrency, amount, currency, error
 					</Form.Control>
 				</Col>
 			</Row>
-			{error && <p className='form-text text-muted'>Please enter a valid number</p>}
+			{error && <p className='form-text my-2'>Please enter a valid number</p>}
 		</Fragment>
 	);
 }
