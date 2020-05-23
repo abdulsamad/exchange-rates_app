@@ -6,6 +6,42 @@ function Converter() {
 	const BASE_URL = 'https://api.exchangeratesapi.io/latest';
 	const [base, setBase] = useState('USD');
 
+	// eslint-disable-next-line
+	const [currencyOptions, setCurrencyOptions] = useState([
+		'AUD',
+		'BGN',
+		'BRL',
+		'CAD',
+		'CHF',
+		'CNY',
+		'CZK',
+		'DKK',
+		'EUR',
+		'GBP',
+		'HKD',
+		'HRK',
+		'HUF',
+		'IDR',
+		'ILS',
+		'INR',
+		'ISK',
+		'JPY',
+		'KRW',
+		'MXN',
+		'MYR',
+		'NOK',
+		'NZD',
+		'PHP',
+		'PLN',
+		'RON',
+		'RUB',
+		'SEK',
+		'SGD',
+		'THB',
+		'TRY',
+		'USD',
+		'ZAR',
+	]);
 	const [fromCurrency, setFromCurrency] = useState('USD');
 	const [fromAmount, setFromAmount] = useState('');
 	const [toCurrency, setToCurrency] = useState('INR');
@@ -78,6 +114,7 @@ function Converter() {
 			<CurrencyRow
 				amount={fromAmount}
 				currency={fromCurrency}
+				currencyOptions={currencyOptions.filter((option) => option !== toCurrency)}
 				onChangeAmount={(ev) => onChangeAmount(ev, 'from')}
 				onChangeCurrency={(ev) => onChangeCurrency(ev, 'from')}
 				error={error === 'from'}
@@ -86,6 +123,7 @@ function Converter() {
 			<CurrencyRow
 				amount={toAmount}
 				currency={toCurrency}
+				currencyOptions={currencyOptions.filter((option) => option !== fromCurrency)}
 				onChangeAmount={(ev) => onChangeAmount(ev, 'to')}
 				onChangeCurrency={(ev) => onChangeCurrency(ev, 'to')}
 				error={error === 'to'}
