@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
+import { $, multiply, divide } from 'moneysafe';
 import CurrencyRow from './CurrencyRow';
 
 function Converter() {
@@ -86,8 +87,8 @@ function Converter() {
 		if (order === 'from') {
 			let amnt;
 			exchangeRates[base] < exchangeRates[toCurrency]
-				? (amnt = amount * exchangeRates[toCurrency])
-				: (amnt = amount / exchangeRates[toCurrency]);
+				? (amnt = multiply($(amount), exchangeRates[toCurrency]))
+				: (amnt = divide($(amount), exchangeRates[toCurrency]));
 
 			toCurrency === 'INR'
 				? (amnt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(amnt))
@@ -97,8 +98,8 @@ function Converter() {
 		} else {
 			let amnt;
 			exchangeRates[base] < exchangeRates[fromCurrency]
-				? (amnt = amount * exchangeRates[toCurrency])
-				: (amnt = amount / exchangeRates[toCurrency]);
+				? (amnt = multiply($(amount), exchangeRates[toCurrency]))
+				: (amnt = divide($(amount), exchangeRates[toCurrency]));
 
 			fromCurrency === 'INR'
 				? (amnt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(amnt))
