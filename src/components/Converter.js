@@ -63,10 +63,10 @@ function Converter() {
 		if (order === 'from') {
 			setBase(value);
 			setFromCurrency(value);
-			setExchangeRate(fromAmount, order);
+			setExchangeRate(toAmount, order);
 		} else {
 			setToCurrency(value);
-			setExchangeRate(toAmount, order);
+			setExchangeRate(fromAmount, order);
 		}
 	};
 
@@ -94,7 +94,7 @@ function Converter() {
 				? (amnt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(amnt))
 				: (amnt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amnt));
 
-			setToAmount(amnt);
+			setToAmount(parseFloat(amnt));
 		} else {
 			let amnt;
 			exchangeRates[base] < exchangeRates[fromCurrency]
@@ -105,7 +105,7 @@ function Converter() {
 				? (amnt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(amnt))
 				: (amnt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amnt));
 
-			setFromAmount(amnt);
+			setFromAmount(parseFloat(amnt));
 		}
 	};
 
