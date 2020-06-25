@@ -71,7 +71,6 @@ function Converter() {
 	};
 
 	const onChangeAmount = ({ target: { value } }, order) => {
-		if (value === null) return;
 		setError(false);
 
 		if (order === 'from') {
@@ -85,25 +84,27 @@ function Converter() {
 
 	const setExchangeRate = (amount, order) => {
 		if (order === 'from') {
+			if (amount === '') {
+				setToAmount('');
+				return;
+			}
+
 			let amnt;
 			exchangeRates[base] < exchangeRates[toCurrency]
 				? (amnt = multiply($(amount), exchangeRates[toCurrency]))
 				: (amnt = divide($(amount), exchangeRates[toCurrency]));
 
-			toCurrency === 'INR'
-				? (amnt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(amnt))
-				: (amnt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amnt));
-
 			setToAmount(parseFloat(amnt));
 		} else {
+			if (amount === '') {
+				setFromAmount('');
+				return;
+			}
+
 			let amnt;
 			exchangeRates[base] < exchangeRates[fromCurrency]
 				? (amnt = multiply($(amount), exchangeRates[toCurrency]))
 				: (amnt = divide($(amount), exchangeRates[toCurrency]));
-
-			fromCurrency === 'INR'
-				? (amnt = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 }).format(amnt))
-				: (amnt = new Intl.NumberFormat('en-US', { maximumFractionDigits: 2 }).format(amnt));
 
 			setFromAmount(parseFloat(amnt));
 		}
