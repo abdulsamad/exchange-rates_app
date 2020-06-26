@@ -154,9 +154,9 @@ function Historical() {
 	return (
 		<Fragment>
 			<Col lg={1}></Col>
-			<Col lg={4} className='px-sm-2 px-lg-5'>
+			<Col lg={4} className='px-sm-1 px-lg-5'>
 				<Form className='text-center'>
-					<h4 className='mb-3'>Get Historical Data</h4>
+					<h5 className='mb-3'>Get Historical Data</h5>
 					<Form.Group>
 						<Form.Label>Base</Form.Label>
 						<Form.Control as='select' value={base} onChange={(ev) => setBase(ev.target.value)}>
@@ -231,7 +231,7 @@ function Historical() {
 					</Row>
 				</Form>
 			</Col>
-			<Col lg={1}></Col>
+			<Col lg={1} className='my-5'></Col>
 			{datasets.length > 0 && (
 				<Col lg={6}>
 					<h4 className='mb-3 text-center'>Historical Chart</h4>

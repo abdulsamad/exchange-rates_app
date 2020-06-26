@@ -3,5 +3,18 @@
 
 body {
 	overflow-x: hidden;
-	background-color: rgb(37, 37, 37);
+	background-color: #e2f3f5;
+}
+
+.bg-shape {
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 50vh;
+	width: 100%;
+	background: $primary;
+	z-index: 0;
+	transform: skewY(6deg);
+	transform-origin: top right;
 }

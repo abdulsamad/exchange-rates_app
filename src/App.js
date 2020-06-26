@@ -9,15 +9,16 @@ import './scss/App.scss';
 function App() {
 	return (
 		<div className='app'>
+			<div className='bg-shape position-fixed' aria-hidden='true'></div>
 			<Nav />
 			<div className='container-fluid p-4'>
-				<Row className='mt-3 mb-5'>
+				<Row className='my-3'>
 					<Col lg={1}></Col>
-					<Col lg={4} className='px-sm-2 px-lg-5'>
+					<Col lg={4} className='px-sm-1 px-lg-5'>
 						<Converter />
 					</Col>
-					<Col lg={2}></Col>
-					<Col lg={4} className='px-sm-5 px-lg-5 my-5 my-lg-0'>
+					<Col lg={2} className='my-5'></Col>
+					<Col lg={4} className='px-sm-1 px-lg-5'>
 						<IntlToIndian />
 					</Col>
 					<Col lg={1}></Col>

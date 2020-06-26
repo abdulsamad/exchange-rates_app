@@ -94,7 +94,7 @@ function IntlToIndian() {
 
 	return (
 		<Form className='text-center'>
-			<h4 className='mb-3'>Dollars (Millions) to Rupees (Crores)</h4>
+			<h5 className='mb-3'>Dollars (Millions) to Rupees (Crores)</h5>
 			<Row>
 				<Col>
 					<Form.Control

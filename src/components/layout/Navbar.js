@@ -4,7 +4,7 @@ import { Navbar } from 'react-bootstrap';
 function Nav() {
 	return (
 		<div>
-			<Navbar bg='primary'>
+			<Navbar bg='transparent'>
 				<Navbar.Brand href='#home'>
 					<h3>Exchange Rates Board</h3>
 				</Navbar.Brand>
