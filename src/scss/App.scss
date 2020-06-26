@@ -13,7 +13,7 @@ body {
 	left: 0;
 	height: 50vh;
 	width: 100%;
-	background: $primary;
+	background: $primary linear-gradient(to right, $primary, lighten($primary, 20%));
 	z-index: 0;
 	transform: skewY(6deg);
 	transform-origin: top right;
