@@ -189,17 +189,19 @@ function Historical() {
 						</Form.Control>
 					</Form.Group>
 					<Row className=' my-4'>
-						<Col>
-							<Button variant='primary' onClick={addNewCurrencyChart} block>
-								Add New
-							</Button>
-						</Col>
 						{from.length > 0 && to.length > 0 && (
-							<Col>
-								<Button variant='danger' onClick={clearCurrencyChart} block>
-									Clear All
-								</Button>
-							</Col>
+							<Fragment>
+								<Col>
+									<Button variant='primary' onClick={addNewCurrencyChart} block>
+										Add New
+									</Button>
+								</Col>
+								<Col>
+									<Button variant='danger' onClick={clearCurrencyChart} block>
+										Clear All
+									</Button>
+								</Col>
+							</Fragment>
 						)}
 					</Row>
 					<Row>
@@ -234,7 +236,7 @@ function Historical() {
 			<Col lg={1} className='my-5'></Col>
 			{datasets.length > 0 && (
 				<Col lg={6}>
-					<h4 className='mb-3 text-center'>Historical Chart</h4>
+					<h5 className='mb-3 text-center'>Historical Chart</h5>
 					<div className='bg-light'>
 						<Line
 							ref={lineChart}
