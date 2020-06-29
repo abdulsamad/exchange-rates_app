@@ -56,6 +56,9 @@ function Converter() {
 			.then((res) => res.json())
 			.then((data) => {
 				setExchangeRates(data.rates);
+			})
+			.catch((err) => {
+				alert('Sorry! Cannot Find Data Right Now 😕');
 			});
 	}, [base]);
 
@@ -64,9 +67,13 @@ function Converter() {
 			setBase(value);
 			setFromCurrency(value);
 			setExchangeRate(toAmount, order);
+			setFromAmount('');
+			setToAmount('');
 		} else {
 			setToCurrency(value);
 			setExchangeRate(fromAmount, order);
+			setFromAmount('');
+			setToAmount('');
 		}
 	};
 
