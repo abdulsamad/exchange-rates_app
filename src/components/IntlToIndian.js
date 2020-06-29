@@ -19,7 +19,10 @@ function IntlToIndian() {
 	const onChange = ({ target: { value } }) => {
 		let total;
 		setNumberVal(value);
-		if (value === '' || value <= 0) return;
+		if (value === '' || value <= 0) {
+			setAnswer('');
+			return;
+		}
 
 		switch (selectVal) {
 			case 'thousand':
