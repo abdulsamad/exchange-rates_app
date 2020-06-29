@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Col, Row } from 'react-bootstrap';
+import { $, multiply } from 'moneysafe';
 
 function IntlToIndian() {
 	const BASE_URL = 'https://api.exchangeratesapi.io/latest?base=USD&symbols=INR';
@@ -23,25 +24,25 @@ function IntlToIndian() {
 		switch (selectVal) {
 			case 'thousand':
 				if (value.length < 4) {
-					total = value * (USD * 1000);
+					total = multiply($(value), $(USD * 1000));
 				}
 				break;
 
 			case 'million':
 				if (value.length < 4) {
-					total = value * USD * 1000000;
+					total = multiply($(value), $(USD * 1000000));
 				}
 				break;
 
 			case 'billion':
 				if (value.length < 4) {
-					total = value * (USD * 1000000000);
+					total = multiply($(value), $(USD * 1000000000));
 				}
 				break;
 
 			case 'trillion':
 				if (value.length < 4) {
-					total = value * (USD * 1000000000000);
+					total = multiply($(value), $(USD * 1000000000000));
 				}
 				break;
 
@@ -49,11 +50,12 @@ function IntlToIndian() {
 				setAnswer("😄 It's not created for managing this much amount.");
 		}
 
-		FigureToWords(total.toString());
+		FigureToWords(total);
 	};
 
-	const FigureToWords = (amount) => {
+	const FigureToWords = (amnt) => {
 		let str;
+		const amount = Math.round(amnt).toString();
 		const len = amount.length;
 		const [unit, hundred, thousand, lakh, crore] = [
 			parseInt(amount.slice(-2)) !== 0 ? amount.slice(-2) : '',
@@ -89,7 +91,7 @@ function IntlToIndian() {
 				return null;
 		}
 
-		setAnswer(str + ' Approx');
+		setAnswer(str.trim() + ' Approx');
 	};
 
 	return (
@@ -110,7 +112,11 @@ function IntlToIndian() {
 					<Form.Control
 						value={selectVal}
 						as='select'
-						onChange={(ev) => setSelectVal(ev.target.value)}>
+						onChange={(ev) => {
+							setSelectVal(ev.target.value);
+							setNumberVal('');
+							setAnswer('');
+						}}>
 						<option value='thousand'>Thousand</option>
 						<option value='million'>Million</option>
 						<option value='billion'>Billion</option>
