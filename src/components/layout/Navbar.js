@@ -6,7 +6,7 @@ function Nav() {
 		<div>
 			<Navbar bg='transparent'>
 				<Navbar.Brand href='#home'>
-					<h3>Exchange Rates Board</h3>
+					<h3>Exchange Rates</h3>
 				</Navbar.Brand>
 			</Navbar>
 		</div>
