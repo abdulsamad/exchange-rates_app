@@ -35,7 +35,7 @@ function App() {
 				<p>
 					<small className='font-weight-light'>
 						Powered by{' '}
-						<a href='https://exchangeratesapi.io' className='font-weight-bold'>
+						<a href='https://exchangeratesapi.io' className='font-weight-bold text-dark'>
 							ExchangeRatesAPI
 						</a>
 					</small>
