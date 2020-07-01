@@ -32,6 +32,14 @@ function App() {
 				<p className='lead'>
 					<strong>Note:</strong> This real amount may vary because of data updation frequency.
 				</p>
+				<p>
+					<small className='font-weight-light'>
+						Powered by{' '}
+						<a href='https://exchangeratesapi.io' className='font-weight-bold'>
+							ExchangeRatesAPI
+						</a>
+					</small>
+				</p>
 			</div>
 		</div>
 	);
