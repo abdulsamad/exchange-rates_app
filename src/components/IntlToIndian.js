@@ -17,14 +17,20 @@ function IntlToIndian() {
 	}, []);
 
 	const onChange = ({ target: { value } }) => {
-		let total;
 		setNumberVal(value);
+
 		if (value === '' || value <= 0) {
 			setAnswer('');
 			return;
 		}
 
-		switch (selectVal) {
+		calcAnswer(value);
+	};
+
+	const calcAnswer = (value, sel = selectVal) => {
+		let total;
+
+		switch (sel) {
 			case 'thousand':
 				if (value.length < 4) {
 					total = multiply($(value), $(USD * 1000));
@@ -117,8 +123,7 @@ function IntlToIndian() {
 						as='select'
 						onChange={(ev) => {
 							setSelectVal(ev.target.value);
-							setNumberVal('');
-							setAnswer('');
+							calcAnswer(numberVal, ev.target.value);
 						}}>
 						<option value='thousand'>Thousand</option>
 						<option value='million'>Million</option>
