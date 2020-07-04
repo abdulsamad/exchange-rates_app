@@ -1,1 +1,1 @@
-### This is Exchange Rates App for Converting Currencies, Converting Huge USD (Thousands ,Millions, Billions, Trillions) to INR in Understandable format (India Specific Feature) and visually view historcal data of currencies.
+### This is a Exchange Rates App for Converting Currencies, Converting Huge USD (Thousands ,Millions, Billions, Trillions) to INR in Understandable format (India Specific Feature) and visually view historcal data of currencies.
