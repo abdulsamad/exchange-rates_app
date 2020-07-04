@@ -9,7 +9,6 @@ import './scss/App.scss';
 function App() {
 	return (
 		<div className='app'>
-			<div className='bg-shape position-fixed' aria-hidden='true'></div>
 			<Nav />
 			<div className='container-fluid p-4'>
 				<Row className='my-3'>

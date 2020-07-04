@@ -2,10 +2,13 @@
 @import '~bootstrap/scss/bootstrap';
 
 body {
+	min-height: 100vh;
+	width: 100vw;
 	overflow-x: hidden;
-	background-color: #e2f3f5;
+	background: #08aeea linear-gradient(45deg, #08aeea 50%, #2af598 0, #2af598 100%) no-repeat;
 }
 
+/* CANCELLED
 .bg-shape {
 	top: 0;
 	bottom: 0;
@@ -18,3 +21,4 @@ body {
 	transform: skewY(6deg);
 	transform-origin: top right;
 }
+*/
