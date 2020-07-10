@@ -7,18 +7,3 @@ body {
 	overflow-x: hidden;
 	background: #08aeea linear-gradient(45deg, #08aeea 50%, #2af598 0, #2af598 100%) no-repeat;
 }
-
-/* CANCELLED
-.bg-shape {
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	height: 50vh;
-	width: 100%;
-	background: $primary linear-gradient(to right, $primary, lighten($primary, 20%));
-	z-index: 0;
-	transform: skewY(6deg);
-	transform-origin: top right;
-}
-*/
