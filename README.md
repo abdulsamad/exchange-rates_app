@@ -1,4 +1,4 @@
-### This is an app for converting currencies, Converting huge USD (thousands , millions, billions, trillions) to INR in understandable format (India Specific Feature) and visually view historcal data of currencies.
+### This is an app for converting currencies, Converting huge amount in USD (Thousands, Millions, Billions, Trillions) to INR in understandable format (Lakhs, Crores) and visually view historcal data of currencies in chart.
 
 ## :sparkles: Features
 
