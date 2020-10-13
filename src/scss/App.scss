@@ -5,5 +5,11 @@ body {
 	min-height: 100vh;
 	width: 100vw;
 	overflow-x: hidden;
-	background: #08aeea linear-gradient(45deg, #08aeea 50%, #2af598 0, #2af598 100%) no-repeat;
+	background: #08aeea
+		linear-gradient(45deg, #08aeea 50%, #2af598 0, #2af598 100%) no-repeat;
+}
+
+.chart-container {
+	height: 400px;
+	width: 100%;
 }

@@ -49,6 +49,7 @@ function Historical() {
 
 	useEffect(() => {
 		if (from === '' || to === '') return;
+
 		fetch(
 			`https://api.exchangeratesapi.io/history?start_at=${from}&end_at=${to}&base=${base}&symbols=${currency}`,
 		)
@@ -159,7 +160,10 @@ function Historical() {
 					<h5 className='mb-3'>Get Historical Data</h5>
 					<Form.Group>
 						<Form.Label>Base</Form.Label>
-						<Form.Control as='select' value={base} onChange={(ev) => setBase(ev.target.value)}>
+						<Form.Control
+							as='select'
+							value={base}
+							onChange={(ev) => setBase(ev.target.value)}>
 							{currencyOptions.map((option) => (
 								<option value={option} key={option}>
 									{option}
@@ -170,7 +174,9 @@ function Historical() {
 					{prevDataset.map((dataset, index) => (
 						<Form.Group key={dataset.label}>
 							<Form.Label>Freezed Currency #{++index}</Form.Label>
-							<Form.Control value={dataset.label.slice(-3)} readOnly></Form.Control>
+							<Form.Control
+								value={dataset.label.slice(-3)}
+								readOnly></Form.Control>
 						</Form.Group>
 					))}
 					<Form.Group>
@@ -237,13 +243,14 @@ function Historical() {
 			{datasets.length > 0 && (
 				<Col lg={6}>
 					<h5 className='mb-3 text-center'>Historical Chart</h5>
-					<div className='bg-light'>
+					<div className='bg-light position-relative chart-container'>
 						<Line
 							ref={lineChart}
 							data={{
 								labels: chartLabel,
 								datasets: datasets,
 							}}
+							options={{ maintainAspectRatio: false }}
 							className='shadow-sm'
 						/>
 					</div>
